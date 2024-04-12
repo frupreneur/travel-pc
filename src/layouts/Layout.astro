@@ -180,6 +180,22 @@ const {
 	if (window.location.pathname === "/welcome") {
 		localStorage.setItem("show", "1");
 	}
+
+	function checkReferrer() {
+		// Get the referrer of the current page
+		var referrer = document.referrer.toLowerCase();
+		console.log("referrer: ", referrer);
+
+		// Check if the referrer contains "facebook.com"
+		// if (referrer.includes("facebook.com")) {
+		// 	console.log("From Facebook");
+		// } else {
+		// 	console.log("From another source");
+		// }
+	}
+
+	// Call the function when the page loads
+	checkReferrer();
 </script>
 
 <style is:global>
