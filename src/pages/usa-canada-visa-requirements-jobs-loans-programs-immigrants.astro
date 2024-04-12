@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import firstImage from "./../../public/usa-canada-visa-jobs.webp";
 import Ad2 from "../components/adx/ad2.astro";
+import Ad3 from "../components/adx/ad3.astro";
 ---
 
 <Layout
@@ -119,40 +120,35 @@ import Ad2 from "../components/adx/ad2.astro";
 				immigrants have numerous pathways to realize their dreams of a brighter
 				future abroad.
 			</p>
-			<div
-				id="div-gpt-ad-1709904634423-0"
-				style="min-width: 250px; min-height: 250px;"
-			>
-			</div>
+			<Ad3 />
 		</article>
 	</div>
-</Layout>
 
-<script>
-	const adHolder = document.querySelector("#adHolder");
-	// const adEl = document.querySelector("#ad");
-	// const playBTNEl = document.querySelector("#svg");
-	const CTA = document.querySelector("#cta");
-	const contentHolder = document.querySelector("#contentHolder");
-	const header = document.querySelector("header");
+	<script>
+		const adHolder = document.querySelector("#adHolder");
+		// const adEl = document.querySelector("#ad");
+		// const playBTNEl = document.querySelector("#svg");
+		const CTA = document.querySelector("#cta");
+		const contentHolder = document.querySelector("#contentHolder");
+		const header = document.querySelector("header");
 
-	// adEl?.addEventListener("click", function () {
-	// 	console.log("clicked Ad");
-	// });
-	// playBTNEl?.addEventListener("click", function () {
-	// 	console.log("clicked Play Button");
-	// });
+		// adEl?.addEventListener("click", function () {
+		// 	console.log("clicked Ad");
+		// });
+		// playBTNEl?.addEventListener("click", function () {
+		// 	console.log("clicked Play Button");
+		// });
 
-	const showAd = localStorage.getItem("show");
+		const showAd = localStorage.getItem("show");
 
-	if (showAd) {
-		if (adHolder) {
-			if (header) {
-				header.style.display = "none";
-			}
+		if (showAd) {
+			if (adHolder) {
+				if (header) {
+					header.style.display = "none";
+				}
 
-			CTA?.classList.remove("hidden");
-			adHolder.innerHTML += `
+				CTA?.classList.remove("hidden");
+				adHolder.innerHTML += `
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="5em"
@@ -166,22 +162,23 @@ import Ad2 from "../components/adx/ad2.astro";
 				d="m10 16.5l6-4.5l-6-4.5M22 12c0-5.54-4.46-10-10-10c-1.17 0-2.3.19-3.38.56l.7 1.94c.85-.34 1.74-.53 2.68-.53c4.41 0 8.03 3.62 8.03 8.03s-3.62 8.03-8.03 8.03S3.97 16.41 3.97 12c0-.94.19-1.88.53-2.72l-1.94-.66C2.19 9.7 2 10.83 2 12c0 5.54 4.46 10 10 10s10-4.46 10-10M5.47 3.97c.85 0 1.53.71 1.53 1.5C7 6.32 6.32 7 5.47 7c-.79 0-1.5-.68-1.5-1.53c0-.79.71-1.5 1.5-1.5"
 			></path>
 		</svg>`;
+			}
+
+			document.documentElement.style.overflow = "hidden";
+		} else {
+			if (contentHolder) {
+				contentHolder.classList.add("removeMargin");
+			}
+		}
+	</script>
+
+	<style>
+		.removeMargin {
+			margin-top: 0px;
 		}
 
-		document.documentElement.style.overflow = "hidden";
-	} else {
-		if (contentHolder) {
-			contentHolder.classList.add("removeMargin");
+		.deactivate {
+			display: none;
 		}
-	}
-</script>
-
-<style>
-	.removeMargin {
-		margin-top: 0px;
-	}
-
-	.deactivate {
-		display: none;
-	}
-</style>
+	</style>
+</Layout>
